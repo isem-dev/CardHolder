@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/addMoneyFragment">
+
+    <fragment
+        android:id="@+id/addMoneyFragment"
+        android:name="dev.isem.cardholder.ui.AddMoneyFragment"
+        android:label="AddMoneyFragment" >
+        <action
+            android:id="@+id/action_addMoneyFragment_to_cardDetailsFragment"
+            app:destination="@id/cardDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardDetailsFragment"
+        android:name="dev.isem.cardholder.ui.CardDetailsFragment"
+        android:label="card_details_fragment"
+        tools:layout="@layout/card_details_fragment" >
+        <action
+            android:id="@+id/action_cardDetailsFragment_to_amountFragment"
+            app:destination="@id/amountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/amountFragment"
+        android:name="dev.isem.cardholder.ui.AmountFragment"
+        android:label="amount_fragment"
+        tools:layout="@layout/amount_fragment" />
+</navigation>

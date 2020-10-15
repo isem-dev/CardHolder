@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">CardHolder</string>
+
+    <string name="add_money_fragment_title">Add Money with</string>
+    <string name="select_how_to_add_money">Select how to add money</string>
+    <string name="payment_type_icon">Payment type icon</string>
+    <string name="debit_or_credit_card">Debit or credit card</string>
+    <string name="payment_type_arrow">Payment type arrow</string>
+
+    <string name="card_details_fragment_title">Card Details</string>
+    <string name="enter_card_details">Enter card details</string>
+    <string name="this_card_must_be_in_your_name">This card must be in your name</string>
+    <string name="hint_digit_card_number">16 digit card number</string>
+    <string name="hint_date_mm_yy">MM/YY</string>
+    <string name="hint_cvv">CVV</string>
+    <string name="error_enter_valid_card_number">Please enter a valid card number</string>
+    <string name="error_enter_correct_date">Enter correct date</string>
+    <string name="continue_button">Continue</string>
+
+    <string name="amount_fragment_title">Amount</string>
+    <string name="how_much_to_add">How much do you want to add?</string>
+
+</resources>
