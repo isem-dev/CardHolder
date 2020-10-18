@@ -14,7 +14,7 @@
         android:layout_marginStart="@dimen/layout_margin_standard"
         android:layout_marginTop="@dimen/layout_margin_standard"
         android:text="@string/enter_card_details"
-        android:textSize="@dimen/text_h1_size"
+        android:textSize="@dimen/text_h2_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
         android:layout_marginStart="@dimen/layout_margin_standard"
         android:layout_marginTop="@dimen/layout_margin_standard"
         android:text="@string/this_card_must_be_in_your_name"
-        android:textSize="@dimen/text_h2_size"
+        android:textSize="@dimen/text_h3_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,8 +36,9 @@
 
     <ImageView
         android:id="@+id/cardTypeIcon"
-        android:layout_width="90dp"
+        android:layout_width="70dp"
         android:layout_height="45dp"
+        android:layout_marginStart="@dimen/layout_margin_standard"
         android:layout_marginTop="@dimen/layout_margin_double"
         android:contentDescription="@string/payment_type_icon"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,6 +54,7 @@
         app:errorEnabled="true"
         app:layout_constraintBottom_toBottomOf="@+id/cardTypeIcon"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardTypeIcon"
         app:layout_constraintTop_toTopOf="@+id/cardTypeIcon">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -63,7 +65,7 @@
             android:hint="@string/hint_digit_card_number"
             android:inputType="numberDecimal"
             android:maxLength="19"
-            android:textSize="@dimen/text_h2_size" />
+            android:textSize="@dimen/text_h3_size" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -85,7 +87,7 @@
             android:hint="@string/hint_date_mm_yy"
             android:inputType="numberDecimal"
             android:maxLength="5"
-            android:textSize="@dimen/text_h2_size" />
+            android:textSize="@dimen/text_h3_size" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -107,7 +109,7 @@
             android:hint="@string/hint_cvv"
             android:inputType="numberPassword"
             android:maxLength="3"
-            android:textSize="@dimen/text_h2_size" />
+            android:textSize="@dimen/text_h3_size" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -119,10 +121,10 @@
         android:layout_marginEnd="@dimen/layout_margin_standard"
         android:layout_marginBottom="@dimen/layout_margin_standard"
         android:layout_weight="1"
-        android:backgroundTint="@color/black"
-        android:text="@string/continue_button"
         android:enabled="false"
+        android:text="@string/continue_button"
         android:textColor="@color/white"
+        app:backgroundTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="layout_margin_standard">16dp</dimen>
+    <dimen name="layout_margin_one_and_half">24dp</dimen>
     <dimen name="layout_margin_double">32dp</dimen>
 
-    <dimen name="text_h1_size">24sp</dimen>
-    <dimen name="text_h2_size">16sp</dimen>
+    <dimen name="text_h1_size">26sp</dimen>
+    <dimen name="text_h2_size">24sp</dimen>
+    <dimen name="text_h3_size">16sp</dimen>
 </resources>

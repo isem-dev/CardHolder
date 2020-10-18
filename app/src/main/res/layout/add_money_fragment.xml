@@ -13,7 +13,7 @@
         android:layout_marginStart="@dimen/layout_margin_standard"
         android:layout_marginTop="@dimen/layout_margin_standard"
         android:text="@string/select_how_to_add_money"
-        android:textSize="@dimen/text_h1_size"
+        android:textSize="@dimen/text_h2_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

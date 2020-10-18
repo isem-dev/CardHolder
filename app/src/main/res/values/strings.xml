@@ -19,5 +19,7 @@
 
     <string name="amount_fragment_title">Amount</string>
     <string name="how_much_to_add">How much do you want to add?</string>
+    <string name="great_britain_pounds">GBP</string>
+    <string name="_0_00">0.00</string>
 
 </resources>
