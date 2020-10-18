@@ -11,10 +11,10 @@
         android:id="@+id/enterCardDetailsLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="@dimen/layout_margin_standard"
+        android:layout_marginTop="@dimen/layout_margin_standard"
         android:text="@string/enter_card_details"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_h1_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,10 +24,10 @@
         android:id="@+id/thisCardMustBeLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="@dimen/layout_margin_standard"
+        android:layout_marginTop="@dimen/layout_margin_standard"
         android:text="@string/this_card_must_be_in_your_name"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_h2_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
         android:id="@+id/cardTypeIcon"
         android:layout_width="90dp"
         android:layout_height="45dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="@dimen/layout_margin_double"
         android:contentDescription="@string/payment_type_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thisCardMustBeLabel"
@@ -49,7 +49,7 @@
         style="@style/OutlinedRoundedBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="@dimen/layout_margin_standard"
         app:errorEnabled="true"
         app:layout_constraintBottom_toBottomOf="@+id/cardTypeIcon"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +63,7 @@
             android:hint="@string/hint_digit_card_number"
             android:inputType="numberDecimal"
             android:maxLength="19"
-            android:textSize="16sp" />
+            android:textSize="@dimen/text_h2_size" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -71,8 +71,8 @@
         style="@style/OutlinedRoundedBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="@dimen/layout_margin_standard"
+        android:layout_marginTop="@dimen/layout_margin_double"
         app:errorEnabled="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardNumberLayout">
@@ -85,7 +85,7 @@
             android:hint="@string/hint_date_mm_yy"
             android:inputType="numberDecimal"
             android:maxLength="5"
-            android:textSize="16sp" />
+            android:textSize="@dimen/text_h2_size" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -93,8 +93,8 @@
         style="@style/OutlinedRoundedBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/layout_margin_double"
+        android:layout_marginEnd="@dimen/layout_margin_standard"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardNumberLayout">
@@ -107,17 +107,17 @@
             android:hint="@string/hint_cvv"
             android:inputType="numberPassword"
             android:maxLength="3"
-            android:textSize="16sp" />
+            android:textSize="@dimen/text_h2_size" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/continueButton"
         android:layout_width="172dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/layout_margin_standard"
+        android:layout_marginEnd="@dimen/layout_margin_standard"
+        android:layout_marginBottom="@dimen/layout_margin_standard"
         android:layout_weight="1"
         android:backgroundTint="@color/black"
         android:text="@string/continue_button"
