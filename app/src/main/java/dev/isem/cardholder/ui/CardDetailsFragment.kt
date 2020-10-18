@@ -4,22 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import dev.isem.cardholder.*
-import dev.isem.cardholder.ui.utils.*
-import dev.isem.cardholder.ui.utils.CardNumberTextWatcher.CardType
+import dev.isem.cardholder.R
+import dev.isem.cardholder.ui.utils.afterTextChangedCardNumberCheck
+import dev.isem.cardholder.ui.utils.afterTextChangedCardCvvCheck
+import dev.isem.cardholder.ui.utils.afterTextChangeCardExpiryCheck
 import kotlinx.android.synthetic.main.card_details_fragment.*
 
 class CardDetailsFragment : Fragment() {
 
     private val viewModel: MainViewModel by activityViewModels()
-
-    companion object {
-        var continueButtonEnablingFlag = false
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,51 +29,24 @@ class CardDetailsFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        cardNumberInputEditText?.addTextChangedListener(
-            context?.let {
-                CardNumberTextWatcher(
-                    it,
-                    cardNumberInputEditText,
-                    cardNumberLayout,
-                    continueButton,
-                    object : CardType {
-                        override fun setCardType(type: Int) {
-                            when (type) {
-                                VISA -> cardTypeIcon.setImageDrawable(
-                                    ContextCompat.getDrawable(
-                                        activity as MainActivity, R.drawable.ic_visa
-                                    )
-                                )
-                                MASTERCARD -> cardTypeIcon.setImageDrawable(
-                                    ContextCompat.getDrawable(
-                                        activity as MainActivity, R.drawable.ic_mastercard
-                                    )
-                                )
-                                NONE -> cardTypeIcon.setImageDrawable(
-                                    ContextCompat.getDrawable(
-                                        activity as MainActivity, R.drawable.ic_debit_card
-                                    )
-                                )
-                            }
-                        }
-                    })
-            }
+        cardNumberInputEditText?.afterTextChangedCardNumberCheck(
+            context,
+            cardNumberInputEditText,
+            cardNumberLayout,
+            cardTypeIcon,
+            continueButton
         )
 
-        expirationDateInputEditText?.addTextChangedListener(
-            context?.let {
-                CardExpiryTextWatcher(
-                    it,
-                    expirationDateInputEditText,
-                    expirationDateLayout,
-                    continueButton
-                )
-            }
+        expirationDateInputEditText?.afterTextChangeCardExpiryCheck(
+            context,
+            expirationDateInputEditText,
+            expirationDateLayout,
+            continueButton
         )
 
-        cvvInputEditText?.afterTextChangedContinueCheck(continueButton)
+        cvvInputEditText?.afterTextChangedCardCvvCheck(continueButton)
 
-        continueButton.setOnClickListener {
+        continueButton?.setOnClickListener {
             findNavController().navigate(
                 R.id.action_cardDetailsFragment_to_amountFragment
             )
