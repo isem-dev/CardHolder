@@ -47,6 +47,9 @@ class CardDetailsFragment : Fragment() {
         cvvInputEditText?.afterTextChangedCardCvvCheck(continueButton)
 
         continueButton?.setOnClickListener {
+            cardNumberInputEditText.text?.toString()?.let { number -> viewModel.setCardNumber(number) }
+            expirationDateInputEditText.text?.toString()?.let { date -> viewModel.setCardExpiryDate(date) }
+            cvvInputEditText.text?.toString()?.let { cvv -> viewModel.setCardCvvCode(cvv) }
             findNavController().navigate(
                 R.id.action_cardDetailsFragment_to_amountFragment
             )

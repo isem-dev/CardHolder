@@ -12,7 +12,11 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import dev.isem.cardholder.R
 import dev.isem.cardholder.ui.MainActivity
+import kotlinx.android.synthetic.main.amount_fragment.view.*
+import java.math.BigDecimal
+import java.text.NumberFormat
 import java.util.*
+
 
 const val NONE = 0
 const val VISA = 1
@@ -228,5 +232,37 @@ fun TextInputEditText.afterTextChangedCardCvvCheck(continueButton: Button) {
             CardDetailsUtils.cardCvvFlag = s?.length == 3
             CardDetailsUtils.continueCheck(continueButton)
         }
+    })
+}
+
+fun EditText.amountOnTextChanged() {
+    this.addTextChangedListener(object : TextWatcher {
+        private var current: String = ""
+
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+        }
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            if (s.toString() != current) {
+                amountTextInput.removeTextChangedListener(this)
+
+                val cleanString: String? = s?.replace("""[$,.]""".toRegex(), "")
+
+                val parsed = BigDecimal(cleanString ?: "0.00").setScale(2, BigDecimal.ROUND_FLOOR).divide(
+                    BigDecimal(100), BigDecimal.ROUND_FLOOR
+                )
+                val formatted = NumberFormat.getNumberInstance(Locale.US).format(parsed)
+
+                current = formatted
+                amountTextInput.setText(formatted)
+                amountTextInput.setSelection(formatted.length)
+
+                amountTextInput.addTextChangedListener(this)
+            }
+        }
+
+        override fun afterTextChanged(s: Editable?) {
+        }
+
     })
 }
